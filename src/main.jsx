@@ -71,7 +71,8 @@ const router = createBrowserRouter([
   },
   {
     path: "app2",
-    element: <App></App>,
+    // element: <App></App>,
+    Component: App
   },
 ]);
 
