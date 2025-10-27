@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
+import { useLoaderData } from "react-router";
 
-const UserDetails = ({user}) => {
-    const {name, username, address: {street, suite, city}}= user;
-    return (
-        <div>
-            <h3>Name: </h3>
-            <h4>Username: </h4>
-            <div>
-                <h3>Address: </h3>
-                <p>Street: </p>
-                <p>Suite: </p>
-                <p>City: </p>
-            </div>
-            <p><small>Website: </small></p>
-        </div>
-    );
+const UserDetails = () => {
+  const user = useLoaderData();
+  const {website, name} = user;
+  return (
+    <div style={{
+        border: '2px solid green',
+        padding: '10px',
+        margin: '10px'
+    }}>
+      <h3>User Details here</h3>
+      <h5>Name: {name}</h5>
+      <p>Website: {website}</p>
+    </div>
+  );
 };
 
 export default UserDetails;
