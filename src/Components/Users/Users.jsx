@@ -1,5 +1,7 @@
 // import React, { use } from "react";
 import { useLoaderData } from "react-router";
+import User from "../User/User";
+import UserDetails from "../UserDetails/UserDetails";
 
 const Users = () => {
   const users = useLoaderData();
@@ -7,7 +9,12 @@ const Users = () => {
 
   return (
     <div>
-      <h2>This is users</h2>
+      {
+        users.map((user) => <User key={user.id} user={user}></User>)
+      },
+      {/* {
+        users.map((user) => <UserDetails key={user.id} user={user}></UserDetails>)
+      } */}
     </div>
   );
 };
